@@ -13,20 +13,12 @@ void loop()
   while (1)
   {
     digitalWrite(currentLed, HIGH);
-    if ((currentLed == 13) && (direction = 1))
+    if ((currentLed == 13) || (currentLed == 9))
     {
      direction*=-1;
     }
-    else if ((currentLed == 9) && (direction == -1))
-    {
-      direction*=-1;
-    }
-    else
-    {
-     delay(1);  
-    }
     digitalWrite(currentLed-direction, LOW);
-      currentLed += direction;
-      delay(200);
+    currentLed += direction;
+    delay(200);
    }
 }
